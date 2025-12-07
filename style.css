@@ -1,0 +1,603 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+/* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
+}
+
+/* Body Section START */
+
+body {
+  font-family: "Raleway", system-ui, sans-serif;
+  background: #3b2919;
+  color: #f3e5b1;
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* Home Section START */
+
+h2 {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Menu-toggle - Mobile Navigation Toggle button */
+
+.menu-toggle {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.menu-toggle span {
+  width: 60%;
+  height: 2px;
+  border-radius: 999px;
+  background: #444;
+}
+
+/* Navigation Dropdown Panel (Mobile Tablet View) */
+
+.nav-panel {
+  position: fixed;
+  top: 84px;
+  right: 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 40;
+}
+
+.nav-panel a {
+  padding: 10px 40px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #4b3827;
+  border-bottom: 1px solid #e4e0d7;
+  text-align: center;
+}
+
+.nav-panel a:last-child {
+  border-bottom: none;
+}
+
+.nav-panel a:hover {
+  background: #f5efe3;
+}
+
+/* Applied when navigation is open (from JS toggle) */
+
+.nav-panel.nav-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Top Introduction Section — First page START */
+
+.landing-section {
+  min-height: 100vh;
+  background-image: url("images/old-paper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 16px 40px;
+  color: #5b4b3b;
+}
+
+.landing-inner {
+  max-width: 900px;
+  text-align: center;
+}
+
+.landing-logo img {
+  max-width: 280px;
+  width: 70%;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+.landing-tagline {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.landing-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.call-to-action li {
+    display: inline-block;
+    margin: 0 .2em;
+}
+
+.circle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid #5b4b3b;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #5b4b3b;
+}
+
+.menu-main-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 32px;
+  border-radius: 999px;
+  border: none;
+  background: #5b4b3b;
+  color: #f9f2dd;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Top Introduction Section — First page END */
+/* Home Section END */
+
+/* About Section START */
+
+.about-section {
+  background: #4a3624;
+  color: #f0e2b3;
+  padding: 90px 16px 70px;
+}
+
+.about-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-inner h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.about-inner p {
+  margin-bottom: 22px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-strong {
+  font-weight: 700;
+}
+
+.about-last {
+  margin-top: 10px;
+}
+
+/* Social Media icon Strip */
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.social-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Social Media icons loaded as background images  */
+
+.social-circle.fb {
+  background-image: url("images/world-of-veg-facebook.png");
+}
+.social-circle.zomato {
+  background-image: url("images/world-of-veg-zomato.png");
+}
+.social-circle.insta {
+  background-image: url("images/world-of-veg-instagram.png");
+}
+
+/* About Section END */
+
+/* Gallery Section - WOF START */
+
+.gallery-section {
+  background: #000;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gallery Section END */
+
+/* Catering Section START */
+
+.catering-section {
+  background: #4a3624;
+  color: #f0e2b3;
+  padding-top: 90px;
+}
+
+.catering-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+  text-align: center;
+}
+
+.catering-inner h2 {
+  font-size: 2.1rem;
+  margin-bottom: 24px;
+}
+
+.catering-inner p {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 780px;
+  margin: 0 auto 28px;
+}
+
+.catering-inner strong {
+  font-weight: 700;
+}
+
+.call-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 4px;
+  background: #d5c685;
+  color: #4a3624;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.catering-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0;
+}
+
+.catering-images img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Catering Section END */
+
+/* Food Section and Food-Gallery START */
+
+.food-section {
+  background: #4a3624;
+  color: #f0e2b3;
+  padding-top: 90px;
+}
+
+.food-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+  text-align: center;
+}
+
+.food-inner h2 {
+  font-size: 2.1rem;
+  margin-bottom: 22px;
+}
+
+.food-inner p {
+  line-height: 1.8;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.food-inner strong {
+  font-weight: 700;
+}
+
+/* Food Gallery */
+
+.food-gallery-section {
+  background: #000;
+}
+
+.food-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+.food-gallery-grid img {
+  width: 100%;
+  max-height: 320px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Food Section END */
+
+/* Contact Section START */
+
+.contact-section {
+  background: #4a3624;
+  color: #f0e2b3;
+  padding: 90px 16px 40px;
+}
+
+.contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-heading {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 52px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.contact-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+  letter-spacing: 0.12em;
+}
+
+.contact-info p {
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.contact-time {
+  margin-top: 4px;
+}
+
+.contact-call-label {
+  margin-top: 8px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.google-review-box {
+  margin-top: 26px;
+}
+
+.google-review-box img {
+  max-width: 220px;
+  width: 60%;
+}
+
+/* Contact Form Section  */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.get-in-touch-title {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.14em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: 1px solid #8d6c45;
+  color: #f3e5b1;
+  font-size: 0.95rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a98a63;
+}
+
+.contact-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.captcha-block {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #c3aa7c;
+}
+
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.captcha-input {
+  width: 70px;
+  padding: 6px 8px;
+  background: transparent;
+  border: 1px solid #8d6c45;
+  color: #f3e5b1;
+}
+
+.submit-btn {
+  margin-top: 14px;
+  width: 180px;
+  padding: 10px 0;
+  border: none;
+  background: #9a7a52;
+  color: #f3e5b1;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-divider {
+  border: none;
+  border-top: 1px solid #a98a63;
+  margin: 60px auto 18px;
+  max-width: 900px;
+}
+
+.contact-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #c3aa7c;
+}
+
+iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+.spacer-3x {
+    height: 2.4em;
+    display: block;
+}
+
+/* Contact Section END */
+
+/* Responsive Section For Tablet View */
+
+@media (max-width: 991px) {
+  .landing-tagline {
+    font-size: 1rem;
+  }
+
+  .about-inner h2,
+  .catering-inner h2,
+  .food-inner h2,
+  .contact-heading {
+    font-size: 1.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .food-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .contact-form {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+}
+
+/* Responsive Section For Mobile View */
+
+@media (max-width: 575px) {
+  .landing-section {
+    padding-top: 90px;
+  }
+
+  .landing-logo img {
+    max-width: 220px;
+  }
+
+  .landing-tagline {
+    font-size: 0.95rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img,
+  .food-gallery-grid img {
+    max-height: 220px;
+  }
+
+  .nav-panel a {
+    padding-inline: 26px;
+  }
+   iframe {
+  width: 100%;
+  height: 150px;  
+  border: 0;
+}
+  
+}
+
